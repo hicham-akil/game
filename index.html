@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Rock, Paper, Scissors</title>
+
+  
+
+
+  <style>
+    body{
+      background-color: hsl(228, 45%, 44%);
+    }
+    .container{
+      width: 500px;
+      height: 200px;
+            border: 1px solid white;
+      border-radius: 5px 5px 5px 5px;
+      width: 50%;
+      position: relative;
+      left: 20%;
+    }
+    .info p{
+      font-weight: bolder;
+      margin: 0 10px 0px ;
+      font-size: larger;
+      color: white;
+
+    }
+    .info p:nth-child(1){
+      font-weight: bolder;
+      margin: 50px 10px 0px ;
+      
+
+    }
+    .score{
+      background-color: white;
+      width: 100px;
+      height: 90px;
+      position: absolute;
+      left: 88%;
+      top: 28%;
+      border-radius: 5px 5px 5px 5px;
+
+
+    }
+    .score p:nth-child(1){
+      color: black;
+    }
+    .play img{
+      width: 90px;
+      height: 90px;
+      
+      border-radius: 50%;
+    }
+    .play button{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+
+    }
+    .play button:nth-child(1){
+      background-color: hsl(39, 89%, 49%);
+      position: absolute;
+      top: 40%;
+      left: 40%;
+    }
+    .play button:nth-child(2){
+      background-color: hsl(230, 89%, 62%);
+      position: absolute;
+      top: 50%;
+      left: 30%;
+    }
+    .play button:nth-child(3){
+      background-color:hsl(349, 71%, 52%);
+      position: absolute;
+      top: 51%;
+      left: 49%;
+    }
+    .newdiv{
+      width: 400px;
+      height: 400px;
+      position: absolute;
+      left: 20%;
+   
+      top: 40%;
+    }
+    .newdiv button{
+  
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+
+ 
+    }
+    .newdiv img{
+      width: 90px;
+      height: 90px;
+      
+      border-radius: 50%;
+    }
+    .newbuttonscissors{
+      background-color: hsl(39, 89%, 49%);
+    }
+    .newbuttonRock{
+      background-color: hsl(230, 89%, 62%);
+
+    }
+    .newbuttonpaper{
+      background-color:hsl(349, 71%, 52%);
+
+    }
+  
+    .z{
+     position: absolute;
+     left: 60%;
+     top: 40%;
+   
+    }
+    .z{
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+
+    }
+    .img3{
+      width: 90px;
+      height: 90px;
+      
+      border-radius: 50%;
+    }
+    h1{
+      position: absolute;
+      top: 90%;
+      left: 30%;
+    }
+    @media (max-width:640px) {
+      .score{
+      
+      left: 60%;
+
+    }
+    .play button:nth-child(1){
+ 
+      top: 30%;
+      left: 33%;
+    }
+    .play button:nth-child(2){
+     
+      top: 50%;
+      left: 20%;
+    }
+    .play button:nth-child(3){
+    
+   
+      top: 50%;
+     
+    }
+    .newdiv{
+      
+      left: 0%;
+   
+    }
+    .z{
+
+     left: 70%;
+  
+   
+    }
+    }
+      </style>
+</head>
+<body>
+<div class="container">
+  <div class="info">
+    <p>Rock</p>
+    <p>Paper</p>
+    <p>scissors<p>
+  
+
+
+  <div class="score">
+    <p class="scorenumb"></p>
+    <p style="color: black;position: absolute;;top: 0%;">score :</p>
+
+  </div>
+</div>
+<h1 class="winer"></h1>
+</div>
+<div class="play">
+  <button class="scissors"><img src="data:image/png;base64,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" alt=""></button>
+  <button class="Rock"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7QAfS5_1j1YH5LIQE6Ujiv8fIOD8Pa-8BXg&s" alt=""></button>
+  <button class="paper"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMWsuw8I3fOLm425J7Dn5hNd48wOtYHsPMVg&s" alt=""></button>
+</div>
+<div class="computer">
+
+</div>
+
+</body> 
+<script src="scriptproject.js"></script>
+</html>
